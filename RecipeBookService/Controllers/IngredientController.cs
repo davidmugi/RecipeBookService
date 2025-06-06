@@ -6,7 +6,7 @@ using RecipeBookService.Services;
 
 namespace RecipeBookService.Controllers;
 
-[Authorize]
+[Authorize(Roles = "Admin")]
 [ApiController]
 [Route("api/ingredient")]
 public class IngredientController : ControllerBase

@@ -83,15 +83,18 @@ public class RecipeService : IRecipeService
             _mapper.Map<RecipeDTO>(recipe));
     }
 
+    /**
+     * Fetching the query from the queries directory
+     */
     public async Task<BaseDTO<List<TopRecipeDTO>>> GetTopThreeExpensiveRecipesAsync()
     {
         var query = await _sqlQueryProvider.GetQueryAsync("TopThreeExpensiveRecipes.sql");
 
         var topRecipeList = await _recipeBookDbContext.Set<TopRecipeDTO>().FromSqlRaw(query).ToListAsync();
 
-        return new BaseDTO<List<TopRecipeDTO>>((int)InternalStatusCode.Success,
-            "Top three most expensive recipes fetched successfully",
-            topRecipeList);
+        return topRecipeList.Count > 0 ? new BaseDTO<List<TopRecipeDTO>>((int)InternalStatusCode.Success,
+            "Top three most expensive recipes fetched successfully", topRecipeList) :
+            new BaseDTO<List<TopRecipeDTO>>((int)InternalStatusCode.Success, "No recipes yet",null);
     }
 
     public async Task<BaseDTO<PaginatedList<RecipeDTO>>> GetRecipeWithIngredientsPriceAbove10Async(int page,
@@ -113,6 +116,9 @@ public class RecipeService : IRecipeService
             paginatedList);
     }
 
+    /**
+     * Fetching the query from the queries directory
+     */
     public async Task<BaseDTO<MostUsedIngredientDTO>> GetMostMostUsedIngredientAsync()
     {
         var query = await _sqlQueryProvider.GetQueryAsync("MostUsedIngredient.sql");
@@ -120,7 +126,8 @@ public class RecipeService : IRecipeService
         var mostUsedIngredientList =
             await _recipeBookDbContext.Set<MostUsedIngredientDTO>().FromSqlRaw(query).ToListAsync();
 
-        return new BaseDTO<MostUsedIngredientDTO>((int)InternalStatusCode.Success,
-            "Most used Ingredient fetched successfully", mostUsedIngredientList[0]);
+        return mostUsedIngredientList.Count > 0 ? new BaseDTO<MostUsedIngredientDTO>((int)InternalStatusCode.Success,
+            "Most used Ingredient fetched successfully", mostUsedIngredientList[0]) :
+            new BaseDTO<MostUsedIngredientDTO>((int)InternalStatusCode.Success, "No ingredient yet",null);
     }
 }
