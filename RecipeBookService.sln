@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBookService", "RecipeBookService\RecipeBookService.csproj", "{847B1902-D6DA-41F3-985E-DDDDD89E7B64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15DC27B0-729A-48CA-A3BA-4E330FB31664}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBookServiceUnitTests", "RecipeBookServiceUnitTests\RecipeBookServiceUnitTests.csproj", "{AAF6063A-63D7-4942-867F-5A2EC17765C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBookServiceIntegratedTest", "RecipeBookServiceIntegratedTest\RecipeBookServiceIntegratedTest.csproj", "{32382114-B42A-4AAB-94AE-3FAD11E8135A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{847B1902-D6DA-41F3-985E-DDDDD89E7B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{847B1902-D6DA-41F3-985E-DDDDD89E7B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{847B1902-D6DA-41F3-985E-DDDDD89E7B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{847B1902-D6DA-41F3-985E-DDDDD89E7B64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF6063A-63D7-4942-867F-5A2EC17765C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF6063A-63D7-4942-867F-5A2EC17765C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF6063A-63D7-4942-867F-5A2EC17765C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF6063A-63D7-4942-867F-5A2EC17765C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32382114-B42A-4AAB-94AE-3FAD11E8135A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32382114-B42A-4AAB-94AE-3FAD11E8135A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32382114-B42A-4AAB-94AE-3FAD11E8135A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32382114-B42A-4AAB-94AE-3FAD11E8135A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
